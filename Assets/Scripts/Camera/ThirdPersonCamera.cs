@@ -148,6 +148,10 @@ public class ThirdPersonCamera : BaseCamera
         position = new Vector3(posX, posY, posZ);
 
         transform.position = position;
+        if(CurrentTarget.Find("Head") != null)
+        {
+            CurrentTarget = CurrentTarget.Find("Head");
+        }
         transform.LookAt(CurrentTarget);        
     }
 
